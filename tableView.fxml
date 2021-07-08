@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="648.0" prefWidth="1371.0" style="-fx-background-color: #f1dbab;" stylesheets="@tableview.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.TableViewController">
+   <children>
+      <TableView fx:id="tableEtudiants" layoutX="9.0" layoutY="156.0" prefHeight="391.0" prefWidth="1352.0" stylesheets="@tableview.css">
+        <columns>
+          <TableColumn fx:id="idCol" prefWidth="50.0" style="-fx-alignement: center;" text="ID" />
+          <TableColumn fx:id="matriculeCol" prefWidth="73.0" style="-fx-alignement: center;" text="MATRICULE" />
+            <TableColumn fx:id="prenomCol" prefWidth="95.0" style="-fx-alignement: center;" text="PRENOM" />
+            <TableColumn fx:id="nomCol" prefWidth="96.0" style="-fx-alignement: center;" text="NOM" />
+            <TableColumn fx:id="date_NaissCol" prefWidth="84.0" style="-fx-alignement: center;" text="DATE_NAISS" />
+            <TableColumn fx:id="lieu_NaissCol" style="-fx-alignement: center;" text="LIEU_NAISS" />
+            <TableColumn fx:id="genreCol" prefWidth="47.0" style="-fx-alignement: center;" text="GENRE" />
+            <TableColumn fx:id="nationaliteCol" prefWidth="137.0" style="-fx-alignement: center;" text="NATIONALITE" />
+            <TableColumn fx:id="adresseCol" prefWidth="99.0" style="-fx-alignement: center;" text="ADRESSE" />
+            <TableColumn fx:id="emailCol" prefWidth="199.0" style="-fx-alignement: center;" text="EMAIL" />
+            <TableColumn fx:id="telephoneCol" prefWidth="110.0" style="-fx-alignement: center;" text="TELEPHONE" />
+            <TableColumn fx:id="groupe_SangCol" prefWidth="93.0" style="-fx-alignement: center;" text="GROUPE_SANG" />
+            <TableColumn fx:id="situa_MatrimCol" prefWidth="96.0" style="-fx-alignement: center;" text="SITUA_MATRIM" />
+            <TableColumn fx:id="editerCol" prefWidth="111.0" style="-fx-alignement: center;" text="EDITER" />
+        </columns>
+      </TableView>
+      <Pane layoutY="61.0" prefHeight="3.0" prefWidth="200.0" style="-fx-background-color: BLACK;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+      <Text fill="#120779" layoutX="14.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Details de l'Etudiant">
+         <font>
+            <Font name="Arial Bold" size="24.0" />
+         </font>
+      </Text>
+      <FontAwesomeIconView fill="#d7534b" glyphName="CLOSE" layoutX="1351.4285717010498" layoutY="21.0" onMouseClicked="#close" size="20" AnchorPane.rightAnchor="3.857142448425293" />
+      <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="74.0" prefHeight="71.0" prefWidth="912.0">
+         <children>
+            <FontAwesomeIconView fill="#2d75e8" glyphName="USER_PLUS" onMouseClicked="#getAddView" size="45" styleClass="btn">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </FontAwesomeIconView>
+            <FontAwesomeIconView fill="#5cb55b" glyphName="REFRESH" onMouseClicked="#refreshTable" size="45" styleClass="btn">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </FontAwesomeIconView>
+            <FontAwesomeIconView fill="#120779" glyphName="PRINT" onMouseClicked="#print" size="45" styleClass="btn">
+               <HBox.margin>
+                  <Insets right="240.0" />
+               </HBox.margin></FontAwesomeIconView>
+            <FontAwesomeIconView fill="#120779" glyphName="SEARCH" size="20">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </FontAwesomeIconView>
+            <TextField fx:id="rechercheTxt" onAction="#handleButtonClicks" onMouseClicked="#handleButtonClicks" prefHeight="35.0" prefWidth="312.0" promptText="Email ici" style="-fx-border-color: #120779;">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </TextField>
+         </children>
+      </HBox>
+      <Button fx:id="btnQuitter" layoutX="1185.0" layoutY="571.0" mnemonicParsing="false" onAction="#handleButtonClicks" onMouseClicked="#handleButtonClicks" style="-fx-background-radius: 30px;" styleClass="btn" stylesheets="@tableview.css" text="QUITTER" textFill="#d7534b">
+         <graphic>
+            <FontAwesomeIconView fill="#120779" glyphName="SIGN_OUT" size="25" />
+         </graphic>
+         <font>
+            <Font name="Arial" size="18.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

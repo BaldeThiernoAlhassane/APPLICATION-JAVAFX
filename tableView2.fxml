@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="648.0" prefWidth="723.0" style="-fx-background-color: #f1dbab;" stylesheets="@tableview.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.TableView2Controller">
+   <children>
+      <TableView fx:id="tableGroupes" layoutX="9.0" layoutY="156.0" prefHeight="391.0" prefWidth="703.0" stylesheets="@tableview.css">
+        <columns>
+          <TableColumn fx:id="idCol" prefWidth="50.0" style="-fx-alignement: center;" text="ID" />
+          <TableColumn fx:id="nomGroupeCol" prefWidth="202.0" style="-fx-alignement: center;" text="NOM GROUPE" />
+            <TableColumn fx:id="dateCreationCol" prefWidth="253.0" style="-fx-alignement: center;" text="DATE CREATION" />
+            <TableColumn fx:id="editerCol" prefWidth="197.0" style="-fx-alignement: center;" text="EDITER" />
+        </columns>
+         <styleClass>
+            <String fx:value="table-view" />
+            <String fx:value="btn" />
+         </styleClass>
+      </TableView>
+      <Pane layoutY="61.0" prefHeight="3.0" prefWidth="200.0" style="-fx-background-color: BLACK;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+      <Text fill="#120779" layoutX="14.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Details du Groupe">
+         <font>
+            <Font name="Arial Bold" size="24.0" />
+         </font>
+      </Text>
+      <FontAwesomeIconView fill="#d7534b" glyphName="CLOSE" layoutX="1351.4285717010498" layoutY="21.0" onMouseClicked="#close" size="20" AnchorPane.rightAnchor="3.857142448425293" />
+      <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="74.0" prefHeight="71.0" prefWidth="550.0">
+         <children>
+            <FontAwesomeIconView fill="#2d75e8" glyphName="USER_PLUS" onMouseClicked="#getAddView" size="45" styleClass="btn">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </FontAwesomeIconView>
+            <FontAwesomeIconView fill="#5cb55b" glyphName="REFRESH" onMouseClicked="#refreshTable" size="45" styleClass="btn">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </FontAwesomeIconView>
+            <FontAwesomeIconView fill="#120779" glyphName="PRINT" onMouseClicked="#print" size="45" styleClass="btn">
+               <HBox.margin>
+                  <Insets right="240.0" />
+               </HBox.margin></FontAwesomeIconView>
+            <FontAwesomeIconView fill="#120779" glyphName="SEARCH" size="20">
+               <HBox.margin>
+                  <Insets right="12.0" />
+               </HBox.margin></FontAwesomeIconView>
+            <TextField fx:id="rechercheTxt" onAction="#handleButtonClicks" onMouseClicked="#handleButtonClicks" prefHeight="33.0" prefWidth="275.0" promptText="Nom du groupe ici" style="-fx-border-color: #120779;">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </TextField>
+         </children>
+      </HBox>
+      <Button fx:id="btnQuitter" layoutX="570.0" layoutY="579.0" mnemonicParsing="false" onAction="#handleButtonClicks" onMouseClicked="#handleButtonClicks" style="-fx-background-radius: 30px;" styleClass="btn" stylesheets="@tableview.css" text="QUITTER" textFill="#d7534b">
+         <graphic>
+            <FontAwesomeIconView fill="#120779" glyphName="SIGN_OUT" size="25" />
+         </graphic>
+         <font>
+            <Font name="Arial" size="18.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
